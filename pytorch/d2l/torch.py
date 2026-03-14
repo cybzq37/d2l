@@ -277,8 +277,8 @@ class Trainer(d2l.HyperParameters):
     def fit(self, model, data):
         self.prepare_data(data)
         self.prepare_model(model)
-        self.optim = model.configure_optimizers()
-        self.epoch = 0
+        self.optim = model.configure_optimizers() # 优化器
+        self.epoch = 0 # 训练轮数
         self.train_batch_idx = 0
         self.val_batch_idx = 0
         for self.epoch in range(self.max_epochs):
